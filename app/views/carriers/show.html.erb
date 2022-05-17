@@ -1,0 +1,24 @@
+<div>
+  <h2><%= @carrier.corporate_name %></h2>
+  <dl>
+    <dt>Nome fantasia: </dt>
+    <dd><%= @carrier.brand_name %></dd>
+    <dt>Domínio de email: </dt>
+    <dd><%= @carrier.email_domain %></dd>
+    <dt>CNPJ: </dt>
+    <dd><%= @carrier.registration_number %></dd>
+    <dt>Endereço: </dt>
+    <dd><%= @carrier.adress %></dd>
+    <dt>Cidade: </dt>
+    <dd><%= @carrier.city %></dd>
+    <dt>Estado: </dt>
+    <dd><%= @carrier.state %></dd>
+    <dt>País: </dt>
+    <dd><%= @carrier.country %></dd>
+    <dt>Status:  </dt>
+    <dd><%= Carrier.human_attribute_name("status.#{@carrier.status}")%></dd>
+  </dl>
+</div>
+<div>
+  <%= link_to 'Voltar', carriers_path %>
+</div>

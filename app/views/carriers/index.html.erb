@@ -6,7 +6,7 @@
     <div>
       <dl>
         <dt>Nome fantasia: <dt>
-        <dd><%= carrier.brand_name %></dd>
+        <dd><%= link_to carrier.brand_name, carrier_path(carrier.id) %></dd>
         <dt>Email: <dt>
         <dd><%= carrier.email_domain %></dd>
         <dt>Status: <dt>

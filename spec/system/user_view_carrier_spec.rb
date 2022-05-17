@@ -34,4 +34,6 @@ describe 'usuário visualiza transportadoras cadastradas' do
     click_on 'Transportadoras'
     expect(page).to have_content 'Não existem transportadoras cadastradas'
   end
+
+  
 end
