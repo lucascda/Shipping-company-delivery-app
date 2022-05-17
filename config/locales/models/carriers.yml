@@ -1,0 +1,19 @@
+pt-BR:
+  pt-BR:
+  activerecord:
+    models:
+      carrier: 'Transportadora'
+    attributes:
+      carrier:
+        corporate_name: 'Razão social'
+        brand_name: 'Nome fantasia'
+        email_domain: 'Domínio de email'
+        registration_number: 'CNPJ'
+        adress: 'Endereço'
+        city: 'Cidade'
+        estado: 'Estado'
+        country: 'País'
+        status: 'Status'
+      carrier/status:
+        active: 'Ativa'
+        inactive: 'Inativa'

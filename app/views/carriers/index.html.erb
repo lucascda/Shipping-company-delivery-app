@@ -1,0 +1,17 @@
+<h2>Transportadoras cadastradas:</h2>
+<% if @carriers.empty? %>
+  <p>Não existem transportadoras cadastradas</p>
+<% else %>
+  <% @carriers.each do | carrier | %>
+    <div>
+      <dl>
+        <dt>Nome fantasia: <dt>
+        <dd><%= carrier.brand_name %></dd>
+        <dt>Email: <dt>
+        <dd><%= carrier.email_domain %></dd>
+        <dt>Status: <dt>
+        <dd><%= Carrier.human_attribute_name("status.#{carrier.status}")%></dd>
+      </dl>
+    </div>
+  <% end %>
+<% end %>
