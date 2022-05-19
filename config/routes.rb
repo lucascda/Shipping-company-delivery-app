@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root to: 'home#index'
-  resources :carriers, only: [:index, :show]
+  resources :carriers, only: [:index, :show, :edit, :update, :new, :create]
 end

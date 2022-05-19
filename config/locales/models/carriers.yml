@@ -1,5 +1,4 @@
 pt-BR:
-  pt-BR:
   activerecord:
     models:
       carrier: 'Transportadora'
@@ -11,9 +10,10 @@ pt-BR:
         registration_number: 'CNPJ'
         adress: 'Endereço'
         city: 'Cidade'
-        estado: 'Estado'
+        state: 'Estado'
         country: 'País'
         status: 'Status'
       carrier/status:
         active: 'Ativa'
         inactive: 'Inativa'
+ 

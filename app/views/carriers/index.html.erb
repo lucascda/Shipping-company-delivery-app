@@ -1,7 +1,7 @@
 <h2>Transportadoras cadastradas:</h2>
 <% if @carriers.empty? %>
   <p>Não existem transportadoras cadastradas</p>
-<% else %>
+<% else %>  
   <% @carriers.each do | carrier | %>
     <div>
       <dl>
@@ -15,3 +15,6 @@
     </div>
   <% end %>
 <% end %>
+<div>
+    <%= link_to 'Registrar transportadora', new_carrier_path %>
+</div>

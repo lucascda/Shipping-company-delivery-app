@@ -15,10 +15,11 @@
     <dd><%= @carrier.state %></dd>
     <dt>País: </dt>
     <dd><%= @carrier.country %></dd>
-    <dt>Status:  </dt>
+    <dt>Status: </dt>
     <dd><%= Carrier.human_attribute_name("status.#{@carrier.status}")%></dd>
   </dl>
 </div>
 <div>
   <%= link_to 'Voltar', carriers_path %>
+  <%= link_to 'Editar informações', edit_carrier_path(@carrier.id)%>
 </div>

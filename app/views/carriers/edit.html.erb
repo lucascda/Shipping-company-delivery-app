@@ -1,0 +1,44 @@
+<div>
+  <%= form_with(model: @carrier) do | f |%>
+    <div>
+      <%= f.label :corporate_name %>
+      <%= f.text_field :corporate_name %>
+    </div>
+    <div>
+      <%= f.label :brand_name %>
+      <%= f.text_field :brand_name %>
+    </div>
+    <div>
+      <%= f.label :email_domain %>
+      <%= f.text_field :email_domain %>
+    </div>
+    <div>
+      <%= f.label :registration_number %>
+      <%= f.text_field :registration_number %>
+    </div>
+    <div>
+      <%= f.label :adress %>
+      <%= f.text_field :adress %>
+    </div>
+    <div>
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+    </div>
+    <div>
+      <%= f.label :state %>
+      <%= f.text_field :state %>
+    </div>
+    <div>
+      <%= f.label :country %>
+      <%= f.text_field :country %>
+    </div>
+    <div>
+      <%= f.label :status %>      
+      <%= f.select :status, [[I18n.t("activerecord.attributes.carrier/status.active"), "active"],
+                            [I18n.t("activerecord.attributes.carrier/status.inactive"), "inactive"]]%>
+    </div>
+    <div>
+      <%= f.submit 'Enviar' %>
+    </div>   
+  <% end %>
+</div>
