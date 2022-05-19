@@ -4,4 +4,6 @@ class Carrier < ApplicationRecord
             :adress, :city, :state, :country, :status, presence: true
   validates :registration_number, uniqueness: true
   validates :registration_number, length: {is: 14}
+
+  has_many :user
 end
