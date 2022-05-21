@@ -5,12 +5,11 @@ describe 'usuário se autentica' do
     carrier = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
       email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
       adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
-      country: 'Brasil', status: 0)
+      country: 'Brasil', status: 0)   
     
-    carrier_user_role = Role.create(name: 'carrier_user')
 
-    User.create!(name: 'Augusto Roberto', email_domain: 'www.jamef.com.br', email: 'augusto@jamef.com.br',
-                password: 'password', carrier: carrier, role: carrier_user_role)
+    User.create!(name: 'Augusto Roberto', email: 'augusto@jamef.com.br',
+                password: 'password', carrier: carrier)
     visit root_path
     click_on 'Entrar'    
     within 'form' do
@@ -28,12 +27,10 @@ describe 'usuário se autentica' do
     carrier = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
       email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
       adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
-      country: 'Brasil', status: 0)
-    
-    carrier_user_role = Role.create(name: 'carrier_user')
+      country: 'Brasil', status: 0)        
 
-    User.create!(name: 'Augusto Roberto', email_domain: 'www.jamef.com.br', email: 'augusto@jamef.com.br',
-                password: 'password', carrier: carrier, role: carrier_user_role)
+    User.create!(name: 'Augusto Roberto', email: 'augusto@jamef.com.br',
+                password: 'password', carrier: carrier)
     visit root_path
     click_on 'Entrar'        
     within 'form' do

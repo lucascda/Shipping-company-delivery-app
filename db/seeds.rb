@@ -9,3 +9,5 @@ carrier1 = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_nam
   email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
   adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
   country: 'Brasil', status: 0)
+
+
