@@ -1,0 +1,17 @@
+<h2>Detalhes de <%= @vehicle.model%></h2>
+<div>
+  <dl>
+    <dt><%= Vehicle.human_attribute_name(:brand_name)%>: </dt>
+    <dd><%= @vehicle.brand_name %></dd>
+    <dt><%= Vehicle.human_attribute_name(:plate)%>: </dt>
+    <dd><%= @vehicle.plate %></dd>
+    <dt><%= Vehicle.human_attribute_name(:fab_year) %>: </dt>
+    <dd><%= @vehicle.fab_year %></dd>
+    <dt><%= Vehicle.human_attribute_name(:max_cap) %>: </dt>
+    <dd><%= @vehicle.max_cap %> kg</dd>    
+  </dl>
+</div>
+<div>
+  <%= link_to 'Voltar', vehicles_path %>
+  <%= link_to 'Editar informações', edit_vehicle_path(@vehicle.id) %>
+</div>

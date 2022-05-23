@@ -1,0 +1,17 @@
+<h2>Veículos</h2>
+<div>
+  <%= link_to 'Cadastrar Veículos', new_vehicle_path %>
+</div>
+<% if @vehicles.empty? %>
+  <p>Não há veículos cadastrados.</p>
+<% end %>
+<% @vehicles.each do | v |%>
+  <div>
+    <dl>
+      <dt>Modelo:</dt>
+      <dd><%= link_to v.model, vehicle_path(v.id) %></dd>
+      <dt>Capacidade:</dt>
+      <dd><%= v.max_cap %> kg</dd>
+    </dl>
+  </div>
+<% end %>

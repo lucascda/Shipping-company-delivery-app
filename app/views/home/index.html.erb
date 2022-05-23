@@ -1,2 +1,9 @@
 <h1>Shipfy</h1>
-<%= link_to 'Transportadoras', carriers_path %>
+<% if user_signed_in? %>
+  <h2>Painel de Controle - <%= current_user.carrier.brand_name %></h2>
+  <div>
+    <%= link_to 'Veículos', vehicles_path %>
+  </div>
+<% else %>
+  <%= link_to 'Transportadoras', carriers_path %>
+<% end %>

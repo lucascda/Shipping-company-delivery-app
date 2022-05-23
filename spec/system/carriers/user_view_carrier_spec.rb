@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'usuário visualiza transportadoras cadastradas' do
   # TODO: a partir da tela de admin
+  
   it 'a partir da tela inicial' do
     visit(root_path)
     click_on 'Transportadoras'
@@ -33,7 +34,7 @@ describe 'usuário visualiza transportadoras cadastradas' do
     visit root_path
     click_on 'Transportadoras'
     expect(page).to have_content 'Não existem transportadoras cadastradas'
-  end
+  end 
 
-  
 end
+

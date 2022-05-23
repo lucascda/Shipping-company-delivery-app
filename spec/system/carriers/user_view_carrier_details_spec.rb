@@ -34,4 +34,6 @@ describe 'usuário consegue ver detalhes de uma transportadora' do
     click_on 'Voltar'
     expect(current_path).to eq carriers_path
   end
+
+  
 end

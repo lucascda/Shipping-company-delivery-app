@@ -1,0 +1,25 @@
+<%= form_with(model: @vehicle) do | f | %>
+  <div>
+    <%= f.label :brand_name %>
+    <%= f.text_field :brand_name %>
+  </div>
+  <div>
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+  </div>
+  <div>
+    <%= f.label :plate %>
+    <%= f.text_field :plate %>
+  </div>
+  <div>
+    <%= f.label :fab_year%>
+    <%= f.text_field :fab_year %>
+  </div>
+  <div>
+    <%= f.label :max_cap %>
+    <%= f.text_field :max_cap %>
+  </div>
+  <div>
+    <%= f.submit 'Enviar' %>
+  </div>  
+<% end %>
