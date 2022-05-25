@@ -6,7 +6,7 @@ describe 'usuário se cadastra' do
       email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
       adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
       country: 'Brasil', status: 0)    
-    carrier_user_role = Role.create(name: 'carrier_user')
+   
     
     visit root_path
     click_on 'Entrar'

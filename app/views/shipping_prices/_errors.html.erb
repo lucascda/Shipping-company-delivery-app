@@ -1,0 +1,9 @@
+<div>
+  <% if @price.errors.any? %>
+    <ul>
+      <% @price.errors.full_messages.each do | msg | %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      shipping_price: 'Preço de Entrega'
+    attributes:
+      shipping_price:
+        bottom_volume: 'Volume mínimo'
+        upper_volume: 'Volume máximo'
+        bottom_weight: 'Peso mínimo'
+        upper_weight: 'Peso máximo'
+        price_per_km: 'Preço por km'

@@ -1,0 +1,25 @@
+<%= form_with(model: @price) do | f |%>
+  <div>
+    <%= f.label :bottom_volume %>
+    <%= f.text_field :bottom_volume %>
+  </div>
+  <div>
+    <%= f.label :upper_volume %>
+    <%= f.text_field :upper_volume %>
+  </div>
+  <div>
+    <%= f.label :bottom_weight %>
+    <%= f.text_field :bottom_weight %>
+  </div>
+  <div>
+    <%= f.label :upper_weight %>
+    <%= f.text_field :upper_weight %>
+  </div>
+  <div>
+    <%= f.label :price_per_km %>
+    <%= f.text_field :price_per_km %>
+  </div>
+  <div>
+    <%= f.submit 'Salvar' %>
+  </div>
+<% end %>

@@ -3,6 +3,7 @@
   <h2>Painel de Controle - <%= current_user.carrier.brand_name %></h2>
   <div>
     <%= link_to 'Veículos', vehicles_path %>
+    <%= link_to 'Preços', shipping_prices_path %>
   </div>
 <% else %>
   <%= link_to 'Transportadoras', carriers_path %>
