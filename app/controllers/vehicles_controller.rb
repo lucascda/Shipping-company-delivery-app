@@ -1,5 +1,6 @@
 class VehiclesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_vehicle, only: [:show, :edit, :update]
   def index
     user = current_user
     @vehicles = Vehicle.where(carrier: user.carrier.id)
@@ -10,7 +11,7 @@ class VehiclesController < ApplicationController
   end
 
   def show
-    @vehicle = Vehicle.find(params[:id])
+    
     if @vehicle.carrier.id != current_user.carrier.id
       redirect_to vehicles_path, notice: 'Erro: Página não existe'
     end
@@ -18,10 +19,9 @@ class VehiclesController < ApplicationController
   
   def create
     carrier = current_user.carrier
-    params_vehicle = params.require(:vehicle).permit(:plate, :brand_name, :model, :fab_year, :max_cap)
-    params_vehicle[:carrier] = carrier
-    @vehicle = Vehicle.new(params_vehicle)
-    
+    v_params = vehicle_params
+    v_params[:carrier] = carrier
+    @vehicle = Vehicle.new(v_params)    
     if @vehicle.save()
       redirect_to @vehicle, notice: 'Veículo cadastrado com sucesso.'
     else
@@ -31,21 +31,28 @@ class VehiclesController < ApplicationController
   end
 
   def edit
-    @vehicle = Vehicle.find(params[:id])
+    
     if @vehicle.carrier.id != current_user.carrier.id
       redirect_to vehicles_path, notice: 'Erro: Página não existe'
     end
   end
 
-  def update
-    @vehicle = Vehicle.find(params[:id])    
-    params_vehicle = params.require(:vehicle).permit(:plate, :brand_name, :model, :fab_year, :max_cap)    
-
-    if @vehicle.update(params_vehicle)
+  def update       
+    if @vehicle.update(vehicle_params)
       redirect_to @vehicle, notice: 'Edição de veículo confirmada'
     else
       flash.now[:notice] = 'Edição de veículo não pôde ser concluída'
       render 'edit'
     end
+  end
+
+  private
+
+  def set_vehicle
+    @vehicle = Vehicle.find(params[:id])     
+  end
+
+  def vehicle_params
+    my_params = params.require(:vehicle).permit(:plate, :brand_name, :model, :fab_year, :max_cap)
   end
 end
