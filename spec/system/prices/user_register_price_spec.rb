@@ -13,7 +13,7 @@ describe 'usuário registra novo preço' do
       country: 'Brasil', status: 0)
 
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Preços'
     click_on 'Cadastrar novo preço'
@@ -35,7 +35,7 @@ describe 'usuário registra novo preço' do
       country: 'Brasil', status: 0)
 
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Preços'
     click_on 'Cadastrar novo preço'
@@ -62,7 +62,7 @@ describe 'usuário registra novo preço' do
       country: 'Brasil', status: 0)
 
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Preços'
     click_on 'Cadastrar novo preço'

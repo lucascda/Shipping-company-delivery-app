@@ -12,7 +12,7 @@ describe 'usuário cadastra novo veículo' do
       adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
       country: 'Brasil', status: 0)    
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path 
     click_on 'Veículos'
     click_on 'Cadastrar Veículos'
@@ -32,7 +32,7 @@ describe 'usuário cadastra novo veículo' do
       country: 'Brasil', status: 0)    
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
 
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path 
     click_on 'Veículos'
     click_on 'Cadastrar Veículos'
@@ -56,7 +56,7 @@ describe 'usuário cadastra novo veículo' do
 
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
 
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path 
     click_on 'Veículos'
     click_on 'Cadastrar Veículos'
@@ -82,7 +82,7 @@ describe 'usuário cadastra novo veículo' do
 
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
 
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path 
     click_on 'Veículos'
     click_on 'Cadastrar Veículos'

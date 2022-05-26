@@ -10,7 +10,7 @@ describe 'usuário vê detalhes de um veículo' do
     vehicle = Vehicle.create!(plate: 'GOX-1793', brand_name: 'Toyota' , model: 'Camry XLE 3.5 24V Aut.',
               fab_year: '2007', max_cap: 100 , carrier: carrier)
 
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Veículos'
     click_on 'Camry XLE 3.5 24V Aut.'
@@ -31,7 +31,7 @@ describe 'usuário vê detalhes de um veículo' do
     vehicle = Vehicle.create!(plate: 'GOX-1793', brand_name: 'Toyota' , model: 'Camry XLE 3.5 24V Aut.',
               fab_year: '2007', max_cap: 100 , carrier: carrier)
 
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Veículos'
     click_on 'Camry XLE 3.5 24V Aut.'
@@ -56,7 +56,7 @@ describe 'usuário vê detalhes de um veículo' do
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     vehicle = Vehicle.create!(plate: 'GOX-1793', brand_name: 'Toyota' , model: 'Camry XLE 3.5 24V Aut.',
                               fab_year: '2007', max_cap: 100 , carrier: carrier)
-    login_as(user)
+    login_as(user, scope: :user)
     visit vehicle_path(vehicle2)
     expect(current_path).not_to eq vehicle_path(vehicle2)
     expect(current_path).to eq vehicles_path

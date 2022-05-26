@@ -21,7 +21,7 @@ describe 'usuário edita preços' do
         upper_weight: 10, price_per_km: 0.5, carrier: carrier)
     joao = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     
-    login_as(joao)
+    login_as(joao, scope: :user)
     visit root_path
     click_on 'Preços'
     click_on 'Editar Preço 1'
@@ -42,7 +42,7 @@ describe 'usuário edita preços' do
         upper_weight: 10, price_per_km: 0.5, carrier: carrier)
     joao = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     
-    login_as(joao)
+    login_as(joao, scope: :user)
     visit root_path
     click_on 'Preços'
     click_on 'Editar Preço 1'
@@ -72,7 +72,7 @@ describe 'usuário edita preços' do
         upper_weight: 10, price_per_km: 0.5, carrier: carrier)
     joao = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     
-    login_as(joao)
+    login_as(joao, scope: :user)
     visit root_path
     click_on 'Preços'
     click_on 'Editar Preço 1'
@@ -105,7 +105,7 @@ describe 'usuário edita preços' do
               upper_weight: 30, price_per_km: 0.8, carrier: carrier2)
     joao = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     paulo = User.create!(name: 'Paulo', email: 'joaopaulo@saomiguel.com.br', password: 'password')
-    login_as(joao)
+    login_as(joao, scope: :user)
     visit edit_shipping_price_path(price2.id)
     expect(page).not_to eq edit_shipping_price_path(price2.id)    
     expect(page).to have_content 'Preço não encontrado'

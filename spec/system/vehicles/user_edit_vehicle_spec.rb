@@ -10,7 +10,7 @@ describe 'usuário de transportadora edita informações' do
     vehicle = Vehicle.create!(plate: 'GOX-1793', brand_name: 'Toyota' , model: 'Camry XLE 3.5 24V Aut.',
                               fab_year: '2007', max_cap: 100 , carrier: carrier)
     
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path 
     click_on 'Veículos'
     click_on vehicle.model
@@ -40,7 +40,7 @@ describe 'usuário de transportadora edita informações' do
     vehicle = Vehicle.create!(plate: 'GOX-1793', brand_name: 'Toyota' , model: 'Camry XLE 3.5 24V Aut.',
                               fab_year: '2007', max_cap: 100 , carrier: carrier)
     
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path 
     click_on 'Veículos'
     click_on vehicle.model
@@ -70,7 +70,7 @@ describe 'usuário de transportadora edita informações' do
 
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
 
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path 
     click_on 'Veículos'
     click_on vehicle.model
@@ -96,7 +96,7 @@ describe 'usuário de transportadora edita informações' do
     vehicle = Vehicle.create!(plate: 'GOX-1793', brand_name: 'Toyota' , model: 'Camry XLE 3.5 24V Aut.',
                               fab_year: '2007', max_cap: 100 , carrier: carrier)
     
-    login_as(user)
+    login_as(user, scope: :user)
     visit edit_vehicle_path(vehicle2)
     
     expect(current_path).not_to eq edit_vehicle_path(vehicle2)

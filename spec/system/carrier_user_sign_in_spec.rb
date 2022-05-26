@@ -33,11 +33,12 @@ describe 'usuário se autentica' do
        adress: 'AC Plínio Arlindo de Nes, 2180D, Belvedere', city: 'Chapecó', state: 'Santa Catarina',
        country: 'Brasil', status: 0)
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
-    login_as(user)
+   
+    login_as(user, scope: :user)
     visit root_path
     expect(page).to have_content 'Painel de Controle - Jamef'
     expect(page).to_not have_content 'Painel de Controle - São Miguel'
-    expect(page).not_to have_link 'Transportadoras'
+   
   end
 
   it 'e faz log out' do

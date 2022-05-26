@@ -17,7 +17,7 @@ describe 'usuário de transportadora visualiza veículos cadastrados' do
               fab_year: '2009', max_cap: 85 , carrier: carrier)
     Vehicle.create!(plate: 'GYO-0912', brand_name: 'Renault', model: '21 TXE/ TXi 2.2',
                     fab_year: '1992', max_cap: 78, carrier: carrier2)
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
 
     expect(page).to have_link 'Veículos'
@@ -37,7 +37,7 @@ describe 'usuário de transportadora visualiza veículos cadastrados' do
       adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
       country: 'Brasil', status: 0)
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Veículos'
     expect(page).to have_content 'Não há veículos cadastrados.'

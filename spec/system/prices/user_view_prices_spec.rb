@@ -11,7 +11,7 @@ describe 'usuário de transportadora visualiza preços' do
     price2 = ShippingPrice.create!(bottom_volume: 0.001, upper_volume: 0.005, bottom_weight: 10, 
                                   upper_weight: 30, price_per_km: 0.8, carrier: carrier)
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Preços'
     expect(current_path).to eq shipping_prices_path
@@ -32,7 +32,7 @@ describe 'usuário de transportadora visualiza preços' do
       country: 'Brasil', status: 0)
 
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Preços'
     expect(page).to have_content 'Não há preços cadastrados'    
@@ -53,7 +53,7 @@ describe 'usuário de transportadora visualiza preços' do
               upper_weight: 30, price_per_km: 0.8, carrier: carrier2)
     joao = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     paulo = User.create!(name: 'Paulo', email: 'joaopaulo@saomiguel.com.br', password: 'password')
-    login_as(joao)
+    login_as(joao, scope: :user)
     visit root_path
     click_on 'Preços'
     expect(page).to have_content 'Metros cúbicos | Preços | Valor por km'
@@ -72,7 +72,7 @@ describe 'usuário de transportadora visualiza preços' do
       country: 'Brasil', status: 0)
 
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Preços'
     click_on 'Voltar'

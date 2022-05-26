@@ -13,7 +13,7 @@ describe 'usuário registra novo prazo de entrega' do
       country: 'Brasil', status: 0)
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Prazos de Entrega'
     click_on 'Cadastrar Prazos de Entrega'
@@ -32,7 +32,7 @@ describe 'usuário registra novo prazo de entrega' do
       country: 'Brasil', status: 0)
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Prazos de Entrega'
     click_on 'Cadastrar Prazos de Entrega'
@@ -56,7 +56,7 @@ describe 'usuário registra novo prazo de entrega' do
       country: 'Brasil', status: 0)
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Prazos de Entrega'
     click_on 'Cadastrar Prazos de Entrega'
@@ -80,7 +80,7 @@ describe 'usuário registra novo prazo de entrega' do
       country: 'Brasil', status: 0)
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Prazos de Entrega'
     click_on 'Cadastrar Prazos de Entrega'

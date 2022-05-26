@@ -15,7 +15,7 @@ describe 'usuário vê prazos de sua transportadora' do
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     first_delivery_time = DeliveryTime.create!(bottom_distance: 0, upper_distance: 100, working_days: 2, carrier: carrier)
     second_delivery_time = DeliveryTime.create!(bottom_distance: 101, upper_distance: 300, working_days: 5, carrier: carrier)
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Prazos de Entrega'
     
@@ -35,7 +35,7 @@ describe 'usuário vê prazos de sua transportadora' do
       country: 'Brasil', status: 0)
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
 
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Prazos de Entrega'
     expect(page).to have_content 'Não há Prazos de Entrega cadastrados.'
@@ -57,7 +57,7 @@ describe 'usuário vê prazos de sua transportadora' do
     jose = User.create!(name: 'José', email: 'jose@saomiguel.com.br', password: 'password')
     second_delivery_time = DeliveryTime.create!(bottom_distance: 101, upper_distance: 300, working_days: 5, carrier: second_carrier)
     
-    login_as(joao)
+    login_as(joao, scope: :user)
     visit root_path
     click_on 'Prazos de Entrega'
 
@@ -76,7 +76,7 @@ describe 'usuário vê prazos de sua transportadora' do
       country: 'Brasil', status: 0)
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Prazos de Entrega'
     click_on 'Voltar'

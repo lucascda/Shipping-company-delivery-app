@@ -21,7 +21,7 @@ describe 'usuário edita informações de prazo de entrega' do
     first_delivery_time = DeliveryTime.create!(bottom_distance: 0, upper_distance: 100, working_days: 2, carrier: carrier)
     second_delivery_time = DeliveryTime.create!(bottom_distance: 101, upper_distance: 200, working_days: 5, carrier: carrier)
     
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Prazos de Entrega'
     first(:link, 'Editar Prazo').click
@@ -41,7 +41,7 @@ describe 'usuário edita informações de prazo de entrega' do
     first_delivery_time = DeliveryTime.create!(bottom_distance: 0, upper_distance: 100, working_days: 2, carrier: carrier)
     second_delivery_time = DeliveryTime.create!(bottom_distance: 101, upper_distance: 200, working_days: 5, carrier: carrier)
     
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Prazos de Entrega'
     first(:link, 'Editar Prazo').click    
@@ -69,7 +69,7 @@ describe 'usuário edita informações de prazo de entrega' do
     first_delivery_time = DeliveryTime.create!(bottom_distance: 0, upper_distance: 100, working_days: 2, carrier: carrier)
     second_delivery_time = DeliveryTime.create!(bottom_distance: 101, upper_distance: 200, working_days: 5, carrier: carrier)
     
-    login_as(user)
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Prazos de Entrega'
     first(:link, 'Editar Prazo').click    
@@ -98,7 +98,7 @@ describe 'usuário edita informações de prazo de entrega' do
     first_delivery_time = DeliveryTime.create!(bottom_distance: 0, upper_distance: 100, working_days: 2, carrier: first_carrier)
     second_delivery_time = DeliveryTime.create!(bottom_distance: 101, upper_distance: 200, working_days: 5, carrier: second_carrier)
     
-    login_as(joao)
+    login_as(joao, scope: :user)
     visit edit_delivery_time_path(second_delivery_time)
     
     expect(current_path).to eq root_path
