@@ -1,8 +1,10 @@
 require 'rails_helper'
 
-describe 'usuário registra transportadora' do
+describe 'admin registra transportadora' do
   # todo: a partir da tela de usuario_transportadora
   it 'a partir da tela inicial' do
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     visit root_path
     click_on 'Transportadoras'
     click_on 'Registrar transportadora'
@@ -20,7 +22,9 @@ describe 'usuário registra transportadora' do
 
   end
 
-  it 'com sucesso' do    
+  it 'com sucesso' do 
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     visit root_path
     click_on 'Transportadoras'
     click_on 'Registrar transportadora'
@@ -44,6 +48,8 @@ describe 'usuário registra transportadora' do
   end
 
   it 'com dados incompletos' do
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     visit root_path
     click_on 'Transportadoras'
     click_on 'Registrar transportadora'
@@ -71,6 +77,8 @@ describe 'usuário registra transportadora' do
   end
 
   it 'com CNPJ duplicado' do
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     carrier = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
       email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
       adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
@@ -98,6 +106,8 @@ describe 'usuário registra transportadora' do
   end
 
   it 'com CNPJ comprimento errado' do
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     visit root_path
     click_on 'Transportadoras'
     click_on 'Registrar transportadora'

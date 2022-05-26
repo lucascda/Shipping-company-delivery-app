@@ -1,8 +1,10 @@
 require 'rails_helper'
 
-describe 'usuário consegue ver detalhes de uma transportadora' do
+describe 'admin consegue ver detalhes de uma transportadora' do
   # todo: a partir da tela de admin
   it 'a partir da tela inicial' do
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     carrier1 = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
       email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
       adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
@@ -23,6 +25,8 @@ describe 'usuário consegue ver detalhes de uma transportadora' do
   end
 
   it 'e volta pra tela de transportadoras' do
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     carrier1 = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
       email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
       adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',

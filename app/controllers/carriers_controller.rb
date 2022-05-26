@@ -1,5 +1,6 @@
 class CarriersController < ApplicationController
   before_action :set_carrier, only: [:show, :edit, :update]
+  before_action :authenticate_admin!
   
   def index
     @carriers = Carrier.all

@@ -1,8 +1,10 @@
 require 'rails_helper'
 
-describe 'usuário edita informações de transportadora' do
+describe 'admin edita informações de transportadora' do
   # todo: a partir tela de admin
   it 'a partir de tela inicial' do
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     carrier = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
       email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
       adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
@@ -16,6 +18,8 @@ describe 'usuário edita informações de transportadora' do
   end
 
   it 'e vê informações da transportadora nos formulários' do
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     carrier = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
       email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
       adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
@@ -39,6 +43,9 @@ describe 'usuário edita informações de transportadora' do
   end
 
   it 'e edita informações com sucesso' do
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
+    
     carrier = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
       email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
       adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
@@ -67,6 +74,8 @@ describe 'usuário edita informações de transportadora' do
   end
 
   it 'e mantém informações obrigatórias' do
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     carrier = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
       email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
       adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',

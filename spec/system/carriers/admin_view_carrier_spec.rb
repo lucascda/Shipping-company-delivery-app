@@ -1,9 +1,11 @@
 require 'rails_helper'
 
-describe 'usuário visualiza transportadoras cadastradas' do
+describe 'admin visualiza transportadoras cadastradas' do
   # TODO: a partir da tela de admin
   
   it 'a partir da tela inicial' do
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     visit(root_path)
     click_on 'Transportadoras'
     expect(page).to have_content 'Transportadoras cadastradas:'
@@ -19,6 +21,8 @@ describe 'usuário visualiza transportadoras cadastradas' do
         email_domain: 'www.saomiguel.com.br',registration_number: '00428307001917',
         adress: 'AC Plínio Arlindo de Nes, 2180D, Belvedere', city: 'Chapecó', state: 'Santa Catarina',
         country: 'Brasil', status: 0)
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     
     visit(root_path)
     click_on 'Transportadoras'
@@ -31,6 +35,8 @@ describe 'usuário visualiza transportadoras cadastradas' do
   end
 
   it 'e não existem transportadoras cadastradas' do
+    admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
+    login_as(admin, scope: :admin)
     visit root_path
     click_on 'Transportadoras'
     expect(page).to have_content 'Não existem transportadoras cadastradas'
