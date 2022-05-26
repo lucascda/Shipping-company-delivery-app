@@ -1,0 +1,17 @@
+<h2><%= DeliveryTime.model_name.human %></h2>
+<% if @delivery_times.empty? %>
+  <p>Não há <%= DeliveryTime.model_name.human%> cadastrados.</p>
+<% end %>
+<div>  
+  <%= link_to "Cadastrar #{DeliveryTime.model_name.human}", new_delivery_time_path %>
+  <%= link_to 'Voltar', root_path %>
+</div>
+<% @delivery_times.each do | d_time | %>  
+  <dl>
+    <dt><%= I18n.t(:distance) %>:</dt>
+      <dd><%= d_time.distance_description %> km</dd>
+    <dt><%= I18n.t(:due_time) %>:</dt>
+      <dd><%= d_time.working_days %> <%= I18n.t(:day, count: d_time.working_days)%> <%= I18n.t(:working_d, count: d_time.working_days)%></dd>
+  </dl>
+  <%= link_to 'Editar Prazo', edit_delivery_time_path(d_time)%>
+<% end %>

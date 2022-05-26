@@ -1,6 +1,7 @@
 class ShippingPricesController < ApplicationController
-  before_action :set_shipping_price, only: [:update,:edit]
   before_action :authenticate_user!
+  before_action :set_shipping_price, only: [:update,:edit]
+  
   def index
     @prices = ShippingPrice.where(carrier: current_user.carrier.id)
   end

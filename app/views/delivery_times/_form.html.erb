@@ -1,0 +1,17 @@
+<%= form_with(model: @delivery_time) do | f |%>
+  <div>
+    <%= f.label :bottom_distance %>
+    <%= f.text_field :bottom_distance %>
+  </div>
+  <div>
+    <%= f.label :upper_distance %>
+    <%= f.text_field :upper_distance %>
+  </div>
+  <div>
+    <%= f.label :working_days %>
+    <%= f.text_field :working_days %>
+  </div>
+  <div>
+    <%= f.submit 'Enviar' %>
+  </div>
+<% end %>

@@ -6,4 +6,6 @@ class Carrier < ApplicationRecord
   validates :registration_number, length: {is: 14}
 
   has_many :user
+  has_many :vehicles
+  has_many :shipping_price
 end

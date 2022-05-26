@@ -1,0 +1,20 @@
+pt-BR:
+  activerecord:
+    models:
+      delivery_time: 'Prazos de Entrega'        
+    attributes:
+      delivery_time:
+        bottom_distance: 'Distância mínima'
+        upper_distance: 'Distância máxima'
+        working_days: 'Dias úteis'
+  due_time: 'Prazo'
+  distance: 'Distância'
+  working_d:
+    other: 'úteis'
+    one: 'útil'
+  day:
+    one: 'dia'
+    other: 'dias'
+   
+          
+        
