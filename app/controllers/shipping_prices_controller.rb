@@ -1,7 +1,20 @@
 class ShippingPricesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update]
   before_action :set_shipping_price, only: [:update,:edit]
-  
+  before_action :authenticate_admin!, only: [:search]
+  def search
+    dimension_params = params["item_dimension"]
+    weight_params = params["weight"]
+    distance_params = params["distance"]
+    @distance = distance_params    
+    @query_price = ShippingPrice.where("bottom_volume <= :dimension_params AND upper_volume >= :dimension_params",
+                                      {dimension_params: dimension_params}).joins(:carrier).where('carriers.status = 0')
+    @query_due = DeliveryTime.where("bottom_distance <= :distance_params AND upper_distance >= :distance_params",
+      {distance_params: distance_params}).joins(:carrier).where('carriers.status = 0')
+        
+    
+  end
+
   def index
     @prices = ShippingPrice.where(carrier: current_user.carrier.id)
   end
