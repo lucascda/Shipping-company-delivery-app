@@ -1,0 +1,15 @@
+<h2>Ordens de Serviço</h2>
+<%= link_to 'Voltar', order_services_path %>
+<%= link_to 'Criar nova Ordem de Serviço', new_order_service_path %>
+<% if @order_services.empty? %>
+  <p>Não há <%= OrderService.model_name.human %> cadastradas</p>
+<% end %>
+<% @order_services.each do | order | %> 
+  <dl>
+    <dt><%= link_to "#{I18n.t(:order)} #{order.code}", order_service_path(order) %></dt>
+    <dt><%= OrderService.human_attribute_name(:accepted_status)%>:<dt>
+    <dd><%= OrderService.human_attribute_name("accepted_status.#{order.accepted_status}") %></dd>
+    <dt><%= OrderService.human_attribute_name(:order_status)%>:</dt>
+    <dd><%= OrderService.human_attribute_name("order_status.#{order.order_status}") %></dd>
+  </dl>  
+<% end %>

@@ -13,14 +13,16 @@ describe 'admin visualiza transportadoras cadastradas' do
   end
 
   it 'e visualiza transportadoras cadastradas' do
-    carrier1 = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
+    first_carrier = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
        email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
        adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
        country: 'Brasil', status: 0)
-    carrier2 = Carrier.create!(corporate_name: 'Expresso São Miguel S/A', brand_name: 'São Miguel',
+    second_carrier = Carrier.create!(corporate_name: 'Expresso São Miguel S/A', brand_name: 'São Miguel',
         email_domain: 'www.saomiguel.com.br',registration_number: '00428307001917',
         adress: 'AC Plínio Arlindo de Nes, 2180D, Belvedere', city: 'Chapecó', state: 'Santa Catarina',
         country: 'Brasil', status: 0)
+    
+    
     admin = Admin.create!(name: 'Fulano', email: 'fulano@sistemadefrete.com.br', password: 'password')
     login_as(admin, scope: :admin)
     

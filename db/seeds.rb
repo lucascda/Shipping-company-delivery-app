@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 carrier = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
-  email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
+  email_domain: 'www.jamef.com.br',registration_number: '20137617002276',
   adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
   country: 'Brasil', status: 0)
 carrier2= Carrier.create!(corporate_name: 'Expresso São Miguel S/A', brand_name: 'São Miguel',

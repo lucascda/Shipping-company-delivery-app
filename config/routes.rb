@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     get 'search', on: :collection
   end
   resources :delivery_times, only: [:index, :new, :create, :edit, :update]
+  resources :order_services, only: [:index, :show, :new, :create]
 end

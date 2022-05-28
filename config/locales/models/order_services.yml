@@ -1,0 +1,25 @@
+pt-BR:
+  activerecord:
+    models:
+      order_service: 'Ordens de Serviço'
+    attributes:
+      order_service:
+        source_adress: 'Endereço de Retirada'
+        dest_adress: 'Endereço de Destino'
+        code: 'Código de Entrega'
+        product_code: 'Código de Produto'
+        volume: 'Volume do Pedido'
+        weight: 'Peso do Pedido'
+        coordinates: 'Coordenadas de Transporte'
+        order_status: 'Status do Pedido'
+        accepted_status: 'Pendente de Aceite'
+        carrier_id: 'Transportadora'
+      order_service/accepted_status:
+        waiting: 'Aguardando aceitação'
+        done: 'Aceitação alterada'
+      order_service/order_status:
+        awaiting_approval: 'Aguardando aprovação'
+        approved: 'Aprovado'
+        refused: 'Recusado'
+        delivered: 'Entregue'
+  order: 'Pedido'

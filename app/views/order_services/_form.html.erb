@@ -1,0 +1,30 @@
+<%= form_with(model: @order_service) do | f | %>
+  <div>
+    <%= f.label :source_adress %>
+    <%= f.text_field :source_adress %>
+  </div>
+  <div>
+    <%= f.label :dest_adress %>
+    <%= f.text_field :dest_adress %>
+  </div>
+  <div>
+    <%= f.label :product_code %>
+    <%= f.text_field :product_code %>
+  </div>
+  <div>
+    <%= f.label :volume %>
+    <%= f.text_field :volume %>
+  </div>
+  <div>
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+  </div>
+  <div>
+    <%= f.label :carrier_id %>
+    <%= f.collection_select :carrier_id, @suppliers, :id, :brand_name %>
+  </div>
+  <div>
+    <%= f.submit 'Enviar' %>
+  </div>
+  
+<% end %>
