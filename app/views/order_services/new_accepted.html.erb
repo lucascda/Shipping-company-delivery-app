@@ -1,0 +1,11 @@
+<h2>Aprovação de <%= @order_service.code %></h2>
+<p>Selecione um veículo e confirme para aprovar pedido.</p>
+<%= form_with(model: @order_service) do | f |%>
+  <div>
+    <%= f.label :vehicle_id %>
+    <%= f.collection_select :vehicle_id, @vehicles, :id, :model %>
+  </div>
+  <div>
+    <%= f.submit 'Enviar' %>
+  </div>
+<% end %>

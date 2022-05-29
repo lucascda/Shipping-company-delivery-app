@@ -1,22 +1,2 @@
 <%= link_to 'Voltar', order_services_path %>
-<h2>Detalhes do Pedido <%= @order_service.code %></h2>
-<div>
-  <dl>
-    <dt><%= OrderService.human_attribute_name(:accepted_status)%>:</dt>
-    <dd><%= OrderService.human_attribute_name("accepted_status.#{@order_service.accepted_status}")%></dd>
-    <dt><%= OrderService.human_attribute_name(:order_status)%>:</dt>
-    <dd><%= OrderService.human_attribute_name("order_status.#{@order_service.order_status}")%></dd>
-    <dt><%= OrderService.human_attribute_name(:source_adress)%>:</dt>
-    <dd><%= @order_service.source_adress %></dd>
-    <dt><%= OrderService.human_attribute_name(:dest_adress)%>:</dt>
-    <dd><%= @order_service.dest_adress %></dd>
-    <dt><%= OrderService.human_attribute_name(:product_code)%>:</dt>
-    <dd><%= @order_service.product_code %></dd>
-    <dt><%= OrderService.human_attribute_name(:volume)%>:</dt>
-    <dd><%= @order_service.volume %> m³</dd>
-    <dt><%= OrderService.human_attribute_name(:weight)%>:</dt>
-    <dd><%= @order_service.weight %> kg</dd>
-    <dt><%= OrderService.human_attribute_name(:carrier_id)%>:</dt>
-    <dd><%= @order_service.carrier.brand_name %></dd>
-  </dl>
-</div>
+<%= render 'order_details'%>

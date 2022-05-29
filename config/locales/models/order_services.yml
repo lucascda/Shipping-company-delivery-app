@@ -14,6 +14,8 @@ pt-BR:
         order_status: 'Status do Pedido'
         accepted_status: 'Pendente de Aceite'
         carrier_id: 'Transportadora'
+        vehicle: 'Veículo'
+        vehicle_id: 'Veículo'
       order_service/accepted_status:
         waiting: 'Aguardando aceitação'
         done: 'Aceitação alterada'

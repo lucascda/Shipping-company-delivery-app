@@ -15,7 +15,9 @@ class OrderService < ApplicationRecord
   private
 
   def generate_code
-    self.code = SecureRandom.alphanumeric(15).upcase
+    if !self.code.present?
+      self.code = SecureRandom.alphanumeric(15).upcase
+    end
   end
 
   

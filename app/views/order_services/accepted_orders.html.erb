@@ -1,0 +1,21 @@
+<h2><%= OrderService.model_name.human %> Aceitas</h2>
+<%= link_to 'Voltar', users_index_order_services_path%>
+<% if @order_services.empty? %>
+  <p>Não há <%= OrderService.model_name.human %> aceitas</p>
+<% else %>
+  <div>
+    <%= @order_services.each do | order | %>
+      <dl>
+        <dt><%= link_to "#{I18n.t(:order)} #{order.code}", users_show_order_service_path(order) %></dt>
+        <dt><%= OrderService.human_attribute_name(:source_adress)%>:</dt>
+        <dd><%= order.source_adress %></dd>
+        <dt><%= OrderService.human_attribute_name(:dest_adress)%>:</dt>
+        <dd><%= order.dest_adress %></dd>
+        <dt><%= OrderService.human_attribute_name(:volume)%>:</dt>
+        <dd><%= order.volume %> m³</dd>
+        <dt><%= OrderService.human_attribute_name(:weight)%>:</dt>
+        <dd><%= order.weight %> kg</dd>        
+      </dl>      
+    <% end %>
+  </div>
+<% end %>
