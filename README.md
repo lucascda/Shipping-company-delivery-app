@@ -9,3 +9,7 @@
 5. Execute `rails server` para iniciar o servidor localmente
 6. Acesse `localhost:3000` no navegador para acessar o sistema
 7. Para executar os testes, use `rspec`
+
+## Usuários padrão
+O usuário admin padrão é `login: lucas@sistemadefrete.com.br  senha: password`
+Você pode criar mais administradores pelo `rails console` ou no arquivo `seeds.rb`
