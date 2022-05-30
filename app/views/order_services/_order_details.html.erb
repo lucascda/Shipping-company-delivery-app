@@ -1,5 +1,6 @@
 <h2>Detalhes do Pedido <%= @order_service.code %></h2>
 <div>
+  <%= link_to 'Atualizações de rota', order_service_order_routes_path(order_service_id: @order_service.id) %>
   <dl>
     <dt><%= OrderService.human_attribute_name(:accepted_status)%>:</dt>
     <dd><%= OrderService.human_attribute_name("accepted_status.#{@order_service.accepted_status}")%></dd>
@@ -20,7 +21,8 @@
     <% if @order_service.vehicle.present? %>
       <dt><%= OrderService.human_attribute_name(:vehicle_id)%>:</dt>
       <dd><%= @order_service.vehicle.model %></dd>
-    <% end %>
-    
+    <% end %>    
   </dl>
+  
+  
 </div>

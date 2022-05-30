@@ -12,6 +12,7 @@ class OrderService < ApplicationRecord
   enum accepted_status: { waiting: 0, done: 1 }
   enum order_status: { awaiting_approval: 0, approved: 1, refused: 2, delivered: 3}
 
+  has_many :order_routes
   private
 
   def generate_code

@@ -1,0 +1,26 @@
+<%= link_to 'Voltar', order_service_order_routes_path(@order_service) %>
+<h2>Nova atualização de rota para <%= t(:order) %> <%= @order_service.code%></h2>
+<% if (@order_route.errors.any?)%>
+  <ul>
+  <% @order_route.errors.full_messages.each do | msg |%>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+<%= form_with(model: [@order_service, @order_route]) do | f |%>
+  <div>
+    <%= f.label :date %>
+    <%= f.text_field :date%>
+  </div>
+  <div>
+    <%= f.label :time %>
+    <%= f.text_field :time %>
+  </div>
+   <div>
+    <%= f.label :coordinates %>
+    <%= f.text_field :coordinates %>
+  </div>
+  <div>
+    <%= f.submit 'Enviar'%>
+  </div>
+<% end %>

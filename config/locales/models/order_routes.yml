@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      order_route: 'Rota de Pedido'
+    attributes:
+      order_route:
+        date: 'Data'
+        time: 'Horário'
+        coordinates: 'Coordenada Geográfica'
+        order_service: 'Ordem de Serviço'

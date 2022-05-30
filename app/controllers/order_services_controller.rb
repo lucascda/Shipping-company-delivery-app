@@ -25,7 +25,9 @@ class OrderServicesController < ApplicationController
     end    
   end
 
+  
   def update
+    
     @order_service = OrderService.find(params[:id])
     order_params = params.require(:order_service).permit(:vehicle_id)
     if @order_service.done! && @order_service.approved!
