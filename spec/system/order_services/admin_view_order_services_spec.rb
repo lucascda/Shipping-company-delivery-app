@@ -25,20 +25,17 @@ describe 'usuário administrador vê ordens de serviço' do
     
     first_order = OrderService.create!(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
                   dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ',product_code: 'SA32SUMG-0231',
-                  volume: 0.005, weight: 5.5, carrier: first_carrier,
-                  coordinates: '14:50 -16.67861, -49.25389', accepted_status: 1, order_status: 1, vehicle: first_vehicle)
+                  volume: 0.005, weight: 5.5, carrier: first_carrier,accepted_status: 1, order_status: 1, vehicle: first_vehicle)
     second_order = OrderService.create!(source_adress: 'Avenida dos Girassóis 50,Residencial Sun Flower, Anápolis, GO',
                   dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ',
-                  volume: 0.003, weight: 4.3, carrier: first_carrier, coordinates: '17:38 -16.6865, -49.4537',
-                  order_status: 0, accepted_status: 0 , product_code: 'XIA414-OMI-9484',vehicle: nil )    
+                  volume: 0.003, weight: 4.3, carrier: first_carrier, order_status: 0, accepted_status: 0 , product_code: 'XIA414-OMI-9484',vehicle: nil )    
     third_order = OrderService.create!(source_adress: 'Avenida Esther Castilho Marques 45, Cidade de Deus, Sete Lagoas, MG',
                   dest_adress: 'Rua Voluntários da Pátria 89, Bom Retiro, Blumenau, SC',
-                  volume: 0.025, weight: 18.5, carrier: second_carrier, coordinates: '09:45 -22.75917, -43.45111', order_status: 1,
+                  volume: 0.025, weight: 18.5, carrier: second_carrier, order_status: 1,
                   vehicle: nil, accepted_status: 1, product_code: 'ACER-3275-8JA8')
     fourth_order = OrderService.create!(source_adress: 'Rua Sete 25, Planalto II, Ipatinga, MG',
                    dest_adress: 'Conjunto Iguatemi 35, Uruguai, Teresina, PI',
-                   volume: 0.007, weight: 4.25, carrier: second_carrier, coordinates: '09:45 -22.75917, -43.45111',
-                   accepted_status: 1, order_status: 2, product_code: 'LIG-HT4848-3331')
+                   volume: 0.007, weight: 4.25, carrier: second_carrier,accepted_status: 1, order_status: 2, product_code: 'LIG-HT4848-3331')
     
     visit root_path
     click_on 'Ordens de Serviço'

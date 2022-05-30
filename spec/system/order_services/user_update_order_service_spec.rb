@@ -9,12 +9,10 @@ describe 'usuário de transportadora atualiza ordem de serviço' do
     
     first_order = OrderService.create!(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
           dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ', product_code: 'SA32SUMG-0231',
-          volume: 0.005, weight: 5.5, carrier: first_carrier,
-          coordinates: '14:50 -16.67861, -49.25389')
+          volume: 0.005, weight: 5.5, carrier: first_carrier)
     second_order = OrderService.create!(source_adress: 'Avenida dos Girassóis 50,Residencial Sun Flower, Anápolis, GO',
             dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ',
-            volume: 0.003, weight: 4.3, carrier: first_carrier, coordinates: '17:38 -16.6865, -49.4537',
-            product_code: 'XIA414-OMI-9484')
+            volume: 0.003, weight: 4.3, carrier: first_carrier,product_code: 'XIA414-OMI-9484')
 
     first_vehicle = Vehicle.create!(plate: 'GOX-1793', brand_name: 'Toyota' , model: 'Camry XLE 3.5 24V Aut.',
               fab_year: '2007', max_cap: 100 , carrier: first_carrier)
@@ -56,12 +54,10 @@ describe 'usuário de transportadora atualiza ordem de serviço' do
     
     first_order = OrderService.create!(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
           dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ', product_code: 'SA32SUMG-0231',
-          volume: 0.005, weight: 5.5, carrier: first_carrier,
-          coordinates: '14:50 -16.67861, -49.25389')
+          volume: 0.005, weight: 5.5, carrier: first_carrier)
     second_order = OrderService.create!(source_adress: 'Avenida dos Girassóis 50,Residencial Sun Flower, Anápolis, GO',
             dest_adress: 'Rua diferente ',
-            volume: 0.003, weight: 4.3, carrier: first_carrier, coordinates: '17:38 -16.6865, -49.4537',
-            product_code: 'XIA414-OMI-9484') 
+            volume: 0.003, weight: 4.3, carrier: first_carrier,product_code: 'XIA414-OMI-9484') 
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     login_as(user, scope: :user)
       

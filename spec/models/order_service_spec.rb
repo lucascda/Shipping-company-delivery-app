@@ -25,7 +25,7 @@ RSpec.describe OrderService, type: :model do
         first_order = OrderService.new(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
               dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ',
               volume: 0.005, weight: 5.5, carrier: first_carrier, product_code: 'SAMSU-TV32-4570',
-              coordinates: '14:50 -16.67861, -49.25389', accepted_status: 1, order_status: 1, vehicle: first_vehicle)
+              accepted_status: 1, order_status: 1, vehicle: first_vehicle)
         
         expect(first_order.valid?).to be true
       end
@@ -123,7 +123,7 @@ RSpec.describe OrderService, type: :model do
       first_order = OrderService.new(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
             dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ',
             volume: 0.005, weight: 5.5, carrier: first_carrier, product_code: 'SAMSU-TV32-4570',
-            coordinates: '14:50 -16.67861, -49.25389', accepted_status: 1, order_status: 1, vehicle: first_vehicle)
+            accepted_status: 1, order_status: 1, vehicle: first_vehicle)
       first_order.save!
       result = first_order.code
       expect(result).not_to be_empty
@@ -140,11 +140,11 @@ RSpec.describe OrderService, type: :model do
       first_order = OrderService.new(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
             dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ',
             volume: 0.005, weight: 5.5, carrier: first_carrier, product_code: 'SAMSU-TV32-4570',
-            coordinates: '14:50 -16.67861, -49.25389', accepted_status: 1, order_status: 1, vehicle: first_vehicle)
+            accepted_status: 1, order_status: 1, vehicle: first_vehicle)
       second_order = OrderService.new(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
               dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ',
               volume: 0.005, weight: 5.5, carrier: first_carrier, product_code: 'SAMSU-TV32-4570',
-              coordinates: '14:50 -16.67861, -49.25389', accepted_status: 1, order_status: 1, vehicle: first_vehicle)
+              accepted_status: 1, order_status: 1, vehicle: first_vehicle)
       first_order.save!
       second_order.save!
       expect(first_order.code).not_to eq second_order.code

@@ -9,8 +9,7 @@ describe 'usuário de transportadora vê detalhes de ordem de serviço' do
     
     first_order = OrderService.create!(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
           dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ', product_code: 'SA32SUMG-0231',
-          volume: 0.005, weight: 5.5, carrier: first_carrier,
-          coordinates: '14:50 -16.67861, -49.25389')
+          volume: 0.005, weight: 5.5, carrier: first_carrier)
     visit users_show_order_service_path(first_order)
     expect(current_path).to eq new_user_session_path
   end
@@ -23,12 +22,10 @@ describe 'usuário de transportadora vê detalhes de ordem de serviço' do
     
     first_order = OrderService.create!(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
           dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ', product_code: 'SA32SUMG-0231',
-          volume: 0.005, weight: 5.5, carrier: first_carrier,
-          coordinates: '14:50 -16.67861, -49.25389')
+          volume: 0.005, weight: 5.5, carrier: first_carrier)
     second_order = OrderService.create!(source_adress: 'Avenida dos Girassóis 50,Residencial Sun Flower, Anápolis, GO',
           dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ',
-          volume: 0.003, weight: 4.3, carrier: first_carrier, coordinates: '17:38 -16.6865, -49.4537',
-          product_code: 'XIA414-OMI-9484')
+          volume: 0.003, weight: 4.3, carrier: first_carrier,product_code: 'XIA414-OMI-9484')
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     login_as(user, scope: :user)
       
@@ -59,12 +56,10 @@ describe 'usuário de transportadora vê detalhes de ordem de serviço' do
     
     first_order = OrderService.create!(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
                   dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ',product_code: 'SA32SUMG-0231',
-                  volume: 0.005, weight: 5.5, carrier: first_carrier,
-                  coordinates: '14:50 -16.67861, -49.25389')
+                  volume: 0.005, weight: 5.5, carrier: first_carrier)
     second_order = OrderService.create!(source_adress: 'Avenida dos Girassóis 50,Residencial Sun Flower, Anápolis, GO',
                   dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ',
-                  volume: 0.003, weight: 4.3, carrier: second_carrier, coordinates: '17:38 -16.6865, -49.4537',
-                  product_code: 'SA32SUMG-0231')
+                  volume: 0.003, weight: 4.3, carrier: second_carrier,product_code: 'SA32SUMG-0231')
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     login_as(user, scope: :user)
 
@@ -85,12 +80,10 @@ describe 'usuário de transportadora vê detalhes de ordem de serviço' do
     
     first_order = OrderService.create!(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
           dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ', product_code: 'SA32SUMG-0231',
-          volume: 0.005, weight: 5.5, carrier: first_carrier,
-          coordinates: '14:50 -16.67861, -49.25389')
+          volume: 0.005, weight: 5.5, carrier: first_carrier)
     second_order = OrderService.create!(source_adress: 'Avenida dos Girassóis 50,Residencial Sun Flower, Anápolis, GO',
           dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ',
-          volume: 0.003, weight: 4.3, carrier: first_carrier, coordinates: '17:38 -16.6865, -49.4537',
-          product_code: 'XIA414-OMI-9484')
+          volume: 0.003, weight: 4.3, carrier: first_carrier,product_code: 'XIA414-OMI-9484')
     user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
     login_as(user, scope: :user)
       

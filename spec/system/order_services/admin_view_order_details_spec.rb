@@ -24,8 +24,7 @@ describe 'admin vê detalhes de uma ordem de serviço' do
         
     first_order = OrderService.create!(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
                   dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO',product_code: 'SA32SUMG-0231',
-                  volume: 0.005, weight: 5.5, carrier: first_carrier,
-                  coordinates: '14:50 -16.67861, -49.25389', accepted_status: 1, order_status: 1, vehicle: first_vehicle)
+                  volume: 0.005, weight: 5.5, carrier: first_carrier,accepted_status: 1, order_status: 1, vehicle: first_vehicle)
     
     visit root_path
     click_on 'Ordens de Serviço'
@@ -57,8 +56,7 @@ describe 'admin vê detalhes de uma ordem de serviço' do
         
     first_order = OrderService.create!(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
                   dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO',product_code: 'SA32SUMG-0231',
-                  volume: 0.005, weight: 5.5, carrier: first_carrier,
-                  coordinates: '14:50 -16.67861, -49.25389', accepted_status: 1, order_status: 1, vehicle: first_vehicle)
+                  volume: 0.005, weight: 5.5, carrier: first_carrier,accepted_status: 1, order_status: 1, vehicle: first_vehicle)
     
     visit root_path
     click_on 'Ordens de Serviço'
