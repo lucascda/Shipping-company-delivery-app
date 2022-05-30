@@ -1,6 +1,6 @@
 <h2>Consulta de Preços</h2>
 <%= form_with(url: search_shipping_prices_path, method: :get) do | f | %>
-  <%= f.label :item_dimension, 'Dimensão do item' %>
+  <%= f.label :item_dimension, 'Volume' %>
   <%= f.text_field :item_dimension %>
   <%= f.label :weight, 'Peso' %>
   <%= f.text_field :weight %>

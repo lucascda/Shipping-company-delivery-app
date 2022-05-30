@@ -27,7 +27,7 @@ first_order = OrderService.create!(source_adress: 'Rua das Olimpias, Sâo Gerald
   volume: 0.005, weight: 5.5, carrier: first_carrier)
 second_order = OrderService.create!(source_adress: 'Avenida dos Girassóis 50,Residencial Sun Flower, Anápolis, GO',
   dest_adress: 'Rua Dos Bobos, São Paulo, SP ',
-  volume: 0.003, weight: 4.3, carrier: first_carrier, product_code: 'XIA414-OMI-9484')
+  volume: 0.003, weight: 4.3, carrier: second_carrier, product_code: 'XIA414-OMI-9484')
 
 # Dois prazos de entrega
 first_delivery_time = DeliveryTime.create!(bottom_distance: 0, upper_distance: 100, working_days: 2, carrier: first_carrier)

@@ -8,7 +8,7 @@ describe 'administrador de sistema consulta preços' do
     visit root_path
     click_on 'Consultar preços'
     expect(page).to have_content 'Consulta de Preços'
-    expect(page).to have_field 'Dimensão do item'
+    expect(page).to have_field 'Volume'
     expect(page).to have_field 'Peso'
     expect(page).to have_field 'Distância total'
     expect(page).to have_button 'Pesquisar Preços'
@@ -48,7 +48,7 @@ describe 'administrador de sistema consulta preços' do
     
     visit root_path
     click_on 'Consultar preços'
-    fill_in 'Dimensão do item', with: '0.003'
+    fill_in 'Volume', with: '0.003'
     fill_in 'Peso', with: '5.0'
     fill_in 'Distância total', with: '100'
     click_on 'Pesquisar Preços'
@@ -88,7 +88,7 @@ describe 'administrador de sistema consulta preços' do
     
     visit root_path
     click_on 'Consultar preços'
-    fill_in 'Dimensão do item', with: '0.003'
+    fill_in 'Volume', with: '0.003'
     fill_in 'Peso', with: '5.0'
     fill_in 'Distância total', with: '100'
     click_on 'Pesquisar Preços'
@@ -108,7 +108,7 @@ describe 'administrador de sistema consulta preços' do
 
     visit root_path
     click_on 'Consultar preços'
-    fill_in 'Dimensão do item', with: '0.003'
+    fill_in 'Volume', with: '0.003'
     fill_in 'Peso', with: '5.0'
     fill_in 'Distância total', with: '100'
     click_on 'Pesquisar Preços'
