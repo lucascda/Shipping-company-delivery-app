@@ -1,4 +1,9 @@
-<h1>Shipfy</h1>
+<%= form_with(model: @order_service, url: search_order_services_path, method: :get) do | f | %>
+  <%= f.label :code, 'Buscar Entrega' %>
+  <%= f.text_field :code %>
+  <%= f.submit 'Buscar' %>
+<% end %>
+
 <% if user_signed_in? %>
   <h2>Painel de Controle - <%= current_user.carrier.brand_name %></h2>
   <div>

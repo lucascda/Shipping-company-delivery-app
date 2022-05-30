@@ -11,6 +11,10 @@
 
   <body>
     <header>
+    <%= link_to root_path do%>
+      <h1>Sistema de Frete</h1>
+    <% end %>
+    
       <nav>
         <% if user_signed_in?%>
           Logado como: <%= current_user.email %>

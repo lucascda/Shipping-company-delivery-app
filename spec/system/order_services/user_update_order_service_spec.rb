@@ -78,6 +78,37 @@ describe 'usuário de transportadora atualiza ordem de serviço' do
     expect(page).not_to have_content "Peso do Pedido: #{first_order.weight} kg"
   end
 
+  it 'e finaliza ordem de serviço' do
+    first_carrier = Carrier.create!(corporate_name: 'Jamef Transportes Eireli', brand_name: 'Jamef',
+      email_domain: 'www.jamef.com.br',registration_number: '20147617002276',
+      adress: 'Rodovia Marechal Rondon, Km 348', city: 'Barueri', state: 'São Paulo',
+      country: 'Brasil', status: 0)
+    
+    first_order = OrderService.create!(source_adress: 'Rua das Olimpias, Sâo Geraldo, 200, São Paulo, SP',
+          dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ', product_code: 'SA32SUMG-0231',
+          volume: 0.005, weight: 5.5, carrier: first_carrier, order_status: 1)
+    second_order = OrderService.create!(source_adress: 'Avenida dos Girassóis 50,Residencial Sun Flower, Anápolis, GO',
+            dest_adress: 'Rua 21 de Abril, Setor Estrela Dalva, Goiânia, GO ',
+            volume: 0.003, weight: 4.3, carrier: first_carrier, order_status: 1,product_code: 'XIA414-OMI-9484')
+
+    first_vehicle = Vehicle.create!(plate: 'GOX-1793', brand_name: 'Toyota' , model: 'Camry XLE 3.5 24V Aut.',
+              fab_year: '2007', max_cap: 100 , carrier: first_carrier)
+    second_vehicle = Vehicle.create!(plate: 'GVX-5062', brand_name: 'Honda' , model: 'Fit EXL 1.5 Flex/Flexone 16V 5p Aut',
+      fab_year: '2009', max_cap: 85 , carrier: first_carrier)
+    user = User.create!(name: 'João Paulo', email: 'joaopaulo@jamef.com.br', password: 'password')
+    login_as(user, scope: :user)
+
+    visit root_path
+    click_on 'Ordens de Serviço'
+    click_on 'Ordens de Serviço Aceitas'
+    click_on "Pedido #{first_order.code}"
+    click_on "Finalizar pedido"
+    
+    expect(page).to have_content "Ordem de Serviço finalizada"
+    expect(page).not_to have_content "Pedido #{first_order.code}"
+    
+  end
+
   
   
   

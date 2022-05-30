@@ -1,6 +1,15 @@
 class OrderServicesController < ApplicationController
   before_action :authenticate_admin!, only: [:index, :show, :new, :create]
-  before_action :authenticate_user!, only: [:users_index, :users_show, :accepted_orders, :update]
+  before_action :authenticate_user!, only: [:users_index, :users_show, :refused, :delivered, :accepted_orders, :update]
+
+  def search
+    @order_service = OrderService.find_by(code: params[:code])
+    if @order_service
+      @order_routes = OrderRoute.where(order_service_id: @order_service.id)
+    end
+    
+  end
+
   def index
     @order_services = OrderService.all
   end
@@ -49,6 +58,13 @@ class OrderServicesController < ApplicationController
     @order_service = OrderService.find(params[:id])
     if @order_service.done! &&  @order_service.refused!
       redirect_to users_index_order_services_path, notice: 'Ordem de Serviço recusada'
+    end
+  end
+
+  def delivered
+    @order_service = OrderService.find(params[:id])
+    if @order_service.delivered!
+      redirect_to accepted_orders_order_services_path, notice: 'Ordem de Serviço finalizada'
     end
   end
 

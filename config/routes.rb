@@ -14,11 +14,13 @@ Rails.application.routes.draw do
   resources :delivery_times, only: [:index, :new, :create, :edit, :update]
   resources :order_services, only: [:index, :show, :new, :create, :update] do
     resources :order_routes, only: [:index, :new, :create]
+    get 'search', on: :collection
     get 'users_index', on: :collection
     get 'users_show', on: :member
     get 'accepted-orders', on: :collection    
     patch 'new-accepted', on: :member    
     post 'refused', on: :member
+    post 'delivered', on: :member
   end
   
 end

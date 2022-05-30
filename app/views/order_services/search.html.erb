@@ -1,10 +1,6 @@
+<% if @order_service.present? %>
 <h2>Detalhes do Pedido <%= @order_service.code %></h2>
-<div>
-  <%= link_to 'Atualizações de rota', order_service_order_routes_path(order_service_id: @order_service.id) %>
-  <%= button_to 'Finalizar pedido', delivered_order_service_path(@order_service)%>
-  <dl>
-    <dt><%= OrderService.human_attribute_name(:accepted_status)%>:</dt>
-    <dd><%= OrderService.human_attribute_name("accepted_status.#{@order_service.accepted_status}")%></dd>
+  <div>
     <dt><%= OrderService.human_attribute_name(:order_status)%>:</dt>
     <dd><%= OrderService.human_attribute_name("order_status.#{@order_service.order_status}")%></dd>
     <dt><%= OrderService.human_attribute_name(:source_adress)%>:</dt>
@@ -21,9 +17,20 @@
     <dd><%= @order_service.carrier.brand_name %></dd>
     <% if @order_service.vehicle.present? %>
       <dt><%= OrderService.human_attribute_name(:vehicle_id)%>:</dt>
-      <dd><%= @order_service.vehicle.model %></dd>
+      <dd><%= @order_service.vehicle.plate%> - <%= @order_service.vehicle.model %></dd>
     <% end %>    
+  </div>
+  <div>
+    <h3>Atualizações de Rota</h3>
+    <dl>
+    <% @order_routes.each do | route |%>
+      <dt>Coordenada Geográfica: </dt>
+      <dd><%= route.coordinates%></dd>
+      <dt>Data e Hora:</dt>
+      <dd><%= I18n.localize(route.date) %> - <%= I18n.localize(route.time, format: :short_2) %><dd>      
+    <% end %>
   </dl>
-  
-  
-</div>
+  </div>
+<% else %>
+  <p>Não foram encontrados resultados para essa busca</p>
+<% end %>
