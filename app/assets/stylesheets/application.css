@@ -4,7 +4,7 @@
  *
  * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
  * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
+ *'
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any other CSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
@@ -13,3 +13,139 @@
  *= require_tree .
  *= require_self
  */
+html {
+  height: 100%;
+  background-color: #073e91;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  color: #EBF5EE;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 30px 30px;  
+  min-height: 100%;
+}
+
+a:link{  
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #EBF5EE;  
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+.flex{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between
+  
+}
+
+header{
+  margin-bottom: 30px;
+}
+nav span{
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+nav button{
+  border: none;
+  width: 60px;
+  height: 20px;
+  border-radius: 3px;  
+  text-align: center;
+  text-decoration: none;
+  font-weight: 300;  
+}
+main{
+  margin-top: 15px;
+}
+main a{
+  margin-right: 10px;
+}
+main span{
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.company-name{
+  font-size: 30px;
+  font-weight: 500;
+  color: #EBF5EE;
+  
+}
+
+.login{
+  width: 200px;
+  align-items: center;
+}
+.login a{
+  font-size: 20px;
+  color: #EBF5EE;
+  
+}
+
+.search input[type=text]{
+  width: 300px;
+  height: 30px;
+  border: none;
+  padding: 0;
+  margin-right: 20px;
+  border-radius: 3px;
+}
+.search .button{
+  background-color: #C18166;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  color: #EBF5EE;
+  font-weight: bold;
+}
+
+.search label{
+  color: #EBF5EE;
+  margin-right: 15px;
+}
+
+.panel-action{
+  height: 100%;  
+  background-color: #91C4F2;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  margin: 0 5px;
+  border-radius: 5px;    
+  display: inline-block;
+  text-align: end;
+  font-weight: 500;
+  border: 2px solid;
+}
+
+.panel-action:visited{
+  color: #121216;
+  font-weight: 700;
+}
+
+.panel-buttons{
+  margin-left: 20px;
+}
+
+.panel-title{
+  font-size: 1.5rem;
+  display: block;
+}
+h2{
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+dd{
+  font-size: 0.9rem;
+  margin: 5px 15px;
+}

@@ -1,10 +1,11 @@
-<h2>Veículos</h2>
+<span class="panel-title">Veículos</span>
 <div>
-  <%= link_to 'Cadastrar Veículos', new_vehicle_path %>
+  <%= link_to 'Cadastrar Veículos', new_vehicle_path, :class => 'panel-action' %>
 </div>
 <% if @vehicles.empty? %>
   <p>Não há veículos cadastrados.</p>
 <% end %>
+<p>Clique no nome do modelo do veículos para ver detalhes.</p>
 <% @vehicles.each do | v |%>
   <div>
     <dl>

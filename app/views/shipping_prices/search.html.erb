@@ -6,7 +6,7 @@
   <%= f.text_field :weight %>
   <%= f.label :distance, 'Distância total' %>
   <%= f.text_field :distance %>
-  <%= f.submit 'Pesquisar Preços' %>
+  <%= f.submit 'Pesquisar Preços', :class => 'panel-action'%>
 <% end %>
 <% if @query_price.empty? %>
   <p>Não foram encontrados resultados pra essa pesquisa</p>

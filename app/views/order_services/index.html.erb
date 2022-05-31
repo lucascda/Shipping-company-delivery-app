@@ -1,7 +1,8 @@
 <h2>Ordens de Serviço</h2>
 
-<%= link_to 'Voltar', order_services_path %>
-<%= link_to 'Criar nova Ordem de Serviço', new_order_service_path %>
+<%= link_to 'Voltar', root_path, :class => 'panel-action'%>
+<%= link_to 'Criar nova Ordem de Serviço', new_order_service_path, :class => 'panel-action' %>
+<p>Clique no código do pedido para ver detalhes</p>
 <% if @order_services.empty? %>
   <p>Não há <%= OrderService.model_name.human %> cadastradas</p>
 <% end %>

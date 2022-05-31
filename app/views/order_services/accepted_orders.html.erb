@@ -1,5 +1,5 @@
-<h2><%= OrderService.model_name.human %> Aceitas</h2>
-<%= link_to 'Voltar', users_index_order_services_path%>
+<span class="panel-title"><%= OrderService.model_name.human %> Aceitas</span>
+<%= link_to 'Voltar', users_index_order_services_path, :class => "panel-action"%>
 <% if @order_services.empty? %>
   <p>Não há <%= OrderService.model_name.human %> aceitas</p>
 <% else %>

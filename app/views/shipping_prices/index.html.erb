@@ -1,11 +1,11 @@
-<h2>Tabela de Preços <%= Carrier.human_attribute_name(:carrier)%></h2>
+<span class="panel-title">Tabela de Preços <%= Carrier.human_attribute_name(:carrier)%></span>
+<%= link_to 'Voltar', root_path, :class => 'panel-action' %>
 <% if @prices.empty?%>
   <p>Não há preços cadastrados</p>
 <% end %>
 <p>'Metros cúbicos | Preços | Valor por km'</p>
 <% @prices.each do | price |%>
-  <%= price.volume_description %> <%= price.weight_description %> <%= 'R$ ' + price.price_per_km.to_s%>
-  <%= link_to "Editar Preço #{price.id}", edit_shipping_price_path(price.id) %>
+  <%= price.volume_description + ' m³'%> <%= price.weight_description %> <%= 'R$ ' + price.price_per_km.to_s%>
+  <%= link_to "Editar Preço #{price.id}", edit_shipping_price_path(price.id), :class => 'panel-action' %>
 <% end %>
-<%= link_to 'Cadastrar novo preço', new_shipping_price_path %>
-<%= link_to 'Voltar', root_path %>
+<%= link_to 'Cadastrar novo preço', new_shipping_price_path, :class => 'panel-action' %>

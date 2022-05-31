@@ -1,4 +1,4 @@
-<h2>Detalhes de <%= @vehicle.model%></h2>
+<span class="panel-title">Detalhes de <%= @vehicle.model%></span>
 <div>
   <dl>
     <dt><%= Vehicle.human_attribute_name(:brand_name)%>: </dt>
@@ -12,6 +12,6 @@
   </dl>
 </div>
 <div>
-  <%= link_to 'Voltar', vehicles_path %>
-  <%= link_to 'Editar informações', edit_vehicle_path(@vehicle.id) %>
+  <%= link_to 'Voltar', vehicles_path, :class => 'panel-action' %>
+  <%= link_to 'Editar informações', edit_vehicle_path(@vehicle.id), :class => 'panel-action' %>
 </div>

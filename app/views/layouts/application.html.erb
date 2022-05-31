@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ShippingApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Sistema de Frete</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application" %>
   </head>
 
   <body>
-    <header>
+    <header class="flex">
     <%= link_to root_path do%>
-      <h1>Sistema de Frete</h1>
+      <span class="company-name">Sistema de Frete</span>
     <% end %>
     
-      <nav>
+      <nav class="login flex">        
         <% if user_signed_in?%>
-          Logado como: <%= current_user.email %>
+          <span>Logado como: <%= current_user.email %></span>
           <%= button_to 'Sair', destroy_user_session_path, method: :delete %>
         <% elsif admin_signed_in? %>
           Logado como admin: <%= current_admin.email %>
@@ -28,6 +30,7 @@
         <% end %>
       </nav>
     </header>
+    
     <main>
       <div>
         <%= notice %>

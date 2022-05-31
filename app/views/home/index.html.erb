@@ -1,22 +1,24 @@
-<%= form_with(model: @order_service, url: search_order_services_path, method: :get) do | f | %>
-  <%= f.label :code, 'Buscar Entrega' %>
-  <%= f.text_field :code %>
-  <%= f.submit 'Buscar' %>
-<% end %>
-
 <% if user_signed_in? %>
-  <h2>Painel de Controle - <%= current_user.carrier.brand_name %></h2>
+  <span>Painel de Controle - <%= current_user.carrier.brand_name %></span>
   <div>
-    <%= link_to 'Ordens de Serviço', users_index_order_services_path %>
-    <%= link_to 'Veículos', vehicles_path %>
-    <%= link_to 'Preços', shipping_prices_path %>
-    <%= link_to 'Prazos de Entrega', delivery_times_path %>
+    <%= link_to 'Ordens de Serviço', users_index_order_services_path, :class => 'panel-action' %>
+    <%= link_to 'Veículos', vehicles_path, :class => 'panel-action' %>
+    <%= link_to 'Preços', shipping_prices_path, :class => 'panel-action' %>
+    <%= link_to 'Prazos de Entrega', delivery_times_path, :class => 'panel-action' %>
   </div>
 <% elsif admin_signed_in? %>
-  <h2>Painel de Administrador - Sistema de Frete</h2>
+  <span>Painel de Administrador - Sistema de Frete</span>
   <div>
-    <%= link_to 'Transportadoras', carriers_path %>
-    <%= link_to 'Consultar preços', search_shipping_prices_path %>
-    <%= link_to 'Ordens de Serviço', order_services_path %>
+    <%= link_to 'Transportadoras', carriers_path, :class => 'panel-action' %>
+    <%= link_to 'Consultar preços', search_shipping_prices_path, :class => 'panel-action'%>
+    <%= link_to 'Ordens de Serviço', order_services_path, :class => 'panel-action' %>
   </div>  
+<% else %>
+<div class="search">
+  <%= form_with(model: @order_service, url: search_order_services_path, method: :get) do | f | %>
+    <%= f.label :code, 'Buscar Entrega' %>
+    <%= f.text_field :code %>
+    <%= f.submit 'Buscar',:class => 'panel-action'%>
+  <% end %>
+</div>
 <% end %>

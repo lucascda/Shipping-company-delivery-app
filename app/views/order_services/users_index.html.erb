@@ -1,9 +1,9 @@
-<h2><%= OrderService.model_name.human%> - <%= @carrier.brand_name %></h2>
+<span class="panel-title"><%= OrderService.model_name.human%> - <%= @carrier.brand_name %></span>
 <div>
-  <%= link_to 'Voltar', root_path %>
-  <%= link_to "#{OrderService.model_name.human} Aceitas", accepted_orders_order_services_path %>
+  <%= link_to 'Voltar', root_path, :class => 'panel-action' %>
+  <%= link_to "#{OrderService.model_name.human} Aceitas", accepted_orders_order_services_path, :class => 'panel-action' %>
 </div>
-
+<p>Clique no código do pedido para ver detalhes</p>
 <% if @order_services.empty? %>
   <p>Não há <%= OrderService.model_name.human %> pendentes</p>
 <% else %>

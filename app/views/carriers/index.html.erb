@@ -1,4 +1,5 @@
 <h2>Transportadoras cadastradas:</h2>
+<p>Clique no nome da transportadora para ver detalhes</p>
 <% if @carriers.empty? %>
   <p>Não existem transportadoras cadastradas</p>
 <% else %>  
@@ -16,5 +17,5 @@
   <% end %>
 <% end %>
 <div>
-    <%= link_to 'Registrar transportadora', new_carrier_path %>
+    <%= link_to 'Registrar transportadora', new_carrier_path, :class => 'panel-action' %>
 </div>

@@ -72,7 +72,7 @@ describe 'usuário administrador vê ordens de serviço' do
     visit root_path
     click_on 'Ordens de Serviço'
     click_on 'Voltar'
-    expect(current_path).to eq order_services_path
+    expect(current_path).to eq root_path
     
   end
 
